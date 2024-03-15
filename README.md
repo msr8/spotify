@@ -18,7 +18,7 @@ This project consists of two parts:
 1) **Scraper:** A scraper whose working hads 4 phases/parts:
     1) Scrapes all the followers of the last scraped followers of a given user, and stores it in the `users` collection *(unoffical reverse-engineered API)*
     2) Scrapes all the playlists of all the users, and stores it in the `playlists` collection *(unoffical reverse-engineered API)*
-    3) Scrapes the IDs of all the tracks of all the playlists, and stores it in `DATA/playlists_whose_tracks_have_been_scraped.txt`(unoffical reverse-engineered API)*
+    3) Scrapes the IDs of all the tracks of all the playlists, and stores it in `DATA/playlists_whose_tracks_have_been_scraped.txt` *(unoffical reverse-engineered API)*
     4) Scrapes the audio features of all the tracks, and stores it in the `tracks` collection *(official API)*
 2) **Webserver:** A webserver hosting a webpage that shows recommendations based on the song whose link/ID is provided by the user. The recommendations are based on the audio features of the song, and are calculated using a modified optimised K-Nearest Neighbours algorithm
 
@@ -26,7 +26,7 @@ This project consists of two parts:
 
 Some features of the scraper:
 - Implemented extensive error handling as to ensure that the scraper doesn't stop overnight due to any error
-- Wrapped all the scraping functions in a class, so that all the scraping operations (via official or unofficial API) can be done with a single object
+- Wrapped all the scraping functions in a class, so that all the scraping operations (via official or unofficial API) can be done via a single object
 - Did the file/data operations in batches as to ensure that the I/O operations don't slow down the scraping process
 
 <br>
@@ -56,7 +56,7 @@ Technologies & Languages used:
 # 2) Running the webserver
 
 ### 2.1) Running via docker (recommended)
-**Pre-requisites:** [Docker Engine](https://docs.docker.com/engine/install/) should be installed
+**Pre-requisites:** [Docker Engine](https://docs.docker.com/engine/install/) should be installed and running
 
 1) Pull the image from dockerhub
 ```bash
