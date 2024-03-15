@@ -1,0 +1,9 @@
+pandas
+requests
+tqdm
+sty
+beautifulsoup4
+
+django
+pymongo
+sty

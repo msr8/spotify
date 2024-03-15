@@ -1,0 +1,93 @@
+@import url('https://msr8.dev/style.css');
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:400|Inter:400&display=swap');
+
+:root {
+    --empty-input-color: rgb(100,100,100);
+    --spotify-green-copilot: rgb(30, 215, 100);
+    --spotify-green-website: rgb(31, 223, 100);;
+
+    --body-padding: 1.5%;
+
+    --track-url-input-height:  5vh;
+    --track-url-input-padding: 1.2%;
+
+    --button-top-margin: 5px;
+    --button-vertical-padding: 5px;
+}
+
+
+
+html {
+    background-color: var(--bg-color);
+    color: var(--fg-color);
+}
+
+body {
+    padding: var(--body-padding);
+}
+
+#current-track-embed {
+    height: var(--current-track-embed-height);
+}
+
+#track-url-input {
+    font-size: 20px;
+    font-family: Inter;
+    color: var(--fg-color);
+    background-color: var(--bg-color);
+    
+    border: 1px solid var(--spotify-green-copilot);
+    border-radius: 5px;
+
+    width: 100%;
+    height: 60px;
+    padding-right: var(--track-url-input-padding);
+    padding-left:  var(--track-url-input-padding);
+}
+
+#track-url-input:focus {
+    border-color: var(--spotify-green-copilot);
+}
+
+#submit-button {
+    font-size: 20px;
+    font-family: Inter;
+    color: var(--fg-color);
+    background-color: transparent;
+
+    border-style: solid;
+    border-width:  1px;
+    border-radius: 5px;
+    border-color: white;
+
+    width: 100%;
+    margin-top:     var(--button-top-margin);
+    padding-top:    var(--button-vertical-padding);
+    padding-bottom: var(--button-vertical-padding);
+    text-align: center;
+
+    transition: 1s;
+}
+
+#submit-button:hover {
+    cursor: pointer;
+    background-color: var(--spotify-green-copilot);
+    color: black;
+    border-color: black;
+}
+
+#status {
+    font-family: Inconsolata;
+    font-size: 14px;
+
+}
+
+
+.green-fg { color:rgb(0,255,0); }
+.red-fg   { color:rgb(255,0,0); }
+
+
+/* .related-track {
+    height: 10%;
+    background: #060;
+} */

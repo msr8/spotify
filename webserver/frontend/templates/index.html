@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="darkreader-lock">
+    <title>Spotify Reccomender | msr8</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script src="{% static 'script.js' %}" defer></script>
+
+    <!-- <link rel="stylesheet" href="../static/style.css">
+    <script src="../static/script.js" defer></script> -->
+</head>
+
+
+
+<body>
+    <div id="submit-section">
+        <form onsubmit="url_submit();return false">
+            {% csrf_token %}
+            <input type="text" id="track-url-input" onfocus="on_focus_track_url_input()" onfocusout="on_focus_out_track_url_input()" required><br>
+            <div id="submit-wrapper">
+                <input type="submit" value="Submit" id="submit-button">
+            </div>
+        </form>
+    </div>
+
+    <br>
+
+    <div id="status"></div>
+    <div id="related-tracks"></div>
+</body>
+</html>
