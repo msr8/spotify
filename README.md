@@ -105,7 +105,7 @@ docker start -i spotify-cont
 <br>
 
 ### 2.2) Running via source
-**Pre-requisites:** Latest version of [python](https://www.python.org/downloads/) should be installed. [MongoDB]() should be installed and running on port 27018. If you want to use MongoDB on another port, modify the `PORT` variable in [`webserver/backend/views.py`](webserver/backend/views.py) to the port you want to use
+**Pre-requisites:** Latest version of [python](https://www.python.org/downloads/) should be installed. [MongoDB](https://www.mongodb.com/docs/manual/administration/install-community/) should be installed and running on port 27018. If you want to use MongoDB on another port, modify the `PORT` variable in [`webserver/backend/views.py`](webserver/backend/views.py) to the port you want to use
 
 1) Clone the repository and cd into it
 ```bash
@@ -118,7 +118,7 @@ cd spotify
 mongoimport --db spotify --collection tracks --type csv --file DATA/tracks.csv --headerline
 ```
 
-3) Cd into the webserver and install the requirements
+3) cd into the webserver and install the python requirements
 ```bash
 cd webserver
 python -m pip install -r requirements.txt
