@@ -22,7 +22,7 @@
 
 This project consists of two parts:
 
-1) **Scraper:** A scraper whose working hads 4 phases/parts:
+1) **Scraper:** A scraper whose working has 4 phases/parts:
     1) Scrapes all the followers of the last scraped followers of a given user, and stores it in the `users` collection *(unoffical reverse-engineered API)*
     2) Scrapes all the playlists of all the users, and stores it in the `playlists` collection *(unoffical reverse-engineered API)*
     3) Scrapes the IDs of all the tracks of all the playlists, and stores it in `DATA/playlists_whose_tracks_have_been_scraped.txt` *(unoffical reverse-engineered API)*
