@@ -4,11 +4,12 @@
 
 <!-- https://coolors.co/gradient-palette/f72585-066da5?number=5 -->
 
-<img src="https://img.shields.io/github/stars/msr8/spotify?color=F72585&labelColor=302D41&style=for-the-badge">
-<img src="https://img.shields.io/github/last-commit/msr8/spotify?color=BB378D&labelColor=302D41&style=for-the-badge">   
-<img src="https://img.shields.io/github/issues/msr8/spotify?color=7F4995&labelColor=302D41&style=for-the-badge">
-<img src="https://img.shields.io/docker/image-size/maybemsr8/spotify?color=425B9D&labelColor=302D41&style=for-the-badge&label=Docker%20Image%20Size">
-<img src="https://img.shields.io/docker/pulls/maybemsr8/spotify?color=066DA5&labelColor=302D41&style=for-the-badge">
+[![GitHub stars](https://img.shields.io/github/stars/msr8/spotify?color=F72585&labelColor=302D41&style=for-the-badge)](https://github.com/msr8/spotify)
+[![GitHub last commit](https://img.shields.io/github/last-commit/msr8/spotify?color=BB378D&labelColor=302D41&style=for-the-badge)](https://github.com/msr8/spotify)
+[![GitHub issues](https://img.shields.io/github/issues/msr8/spotify?color=7F4995&labelColor=302D41&style=for-the-badge)](https://github.com/msr8/spotify)
+[![Docker Image Size](https://img.shields.io/docker/image-size/maybemsr8/spotify?color=425B9D&labelColor=302D41&style=for-the-badge&label=Docker%20Image%20Size)](https://hub.docker.com/r/maybemsr8/spotify)
+[![Docker Pulls](https://img.shields.io/docker/pulls/maybemsr8/spotify?color=066DA5&labelColor=302D41&style=for-the-badge)](https://hub.docker.com/r/maybemsr8/spotify)
+
 
 ![1-img](screenshots/1.png)
 ![2-img](screenshots/2.png)
