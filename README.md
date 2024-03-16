@@ -1,21 +1,21 @@
 
 
-<center>
+<div align="center">
 
-<!-- https://coolors.co/gradient-palette/f72585-4cc9f0?number=5 -->
+<!-- https://coolors.co/gradient-palette/f72585-066da5?number=5 -->
+
 <img src="https://img.shields.io/github/stars/msr8/spotify?color=F72585&labelColor=302D41&style=for-the-badge">
-<img src="https://img.shields.io/github/last-commit/msr8/spotify?color=CC4EA0&labelColor=302D41&style=for-the-badge">   
-<img src="https://img.shields.io/github/issues/msr8/spotify?color=A277BB&labelColor=302D41&style=for-the-badge">
-<img src="https://img.shields.io/docker/image-size/maybemsr8/spotify?color=77A0D5&labelColor=302D41&style=for-the-badge">
-<img src="https://img.shields.io/docker/pulls/maybemsr8/spotify?color=4CC9F0&labelColor=302D41&style=for-the-badge">
-
+<img src="https://img.shields.io/github/last-commit/msr8/spotify?color=BB378D&labelColor=302D41&style=for-the-badge">   
+<img src="https://img.shields.io/github/issues/msr8/spotify?color=7F4995&labelColor=302D41&style=for-the-badge">
+<img src="https://img.shields.io/docker/image-size/maybemsr8/spotify?color=425B9D&labelColor=302D41&style=for-the-badge&label=Docker%20Image%20Size">
+<img src="https://img.shields.io/docker/pulls/maybemsr8/spotify?color=066DA5&labelColor=302D41&style=for-the-badge">
 
 ![1-img](screenshots/1.png)
 ![2-img](screenshots/2.png)
 ![3-img](screenshots/3.png)
 ![4-img](screenshots/4.png)
 
-</center>
+</div>
 
 
 
