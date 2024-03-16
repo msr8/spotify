@@ -1,6 +1,6 @@
 FROM python:3.12.2-bullseye
 
-COPY . /webserver
+COPY webserver /webserver
 COPY DATA /DATA
 
 # Install mongoDB (https://www.mongodb.com/docs/v5.0/tutorial/install-mongodb-on-debian/)

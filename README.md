@@ -1,3 +1,39 @@
+
+
+<center>
+
+<!-- https://coolors.co/gradient-palette/f72585-4cc9f0?number=3 -->
+<img src="https://img.shields.io/github/stars/msr8/spotify?color=F72585&labelColor=302D41&style=for-the-badge">
+<img src="https://img.shields.io/github/last-commit/msr8/spotify?color=A277BB&labelColor=302D41&style=for-the-badge">   
+<img src="https://img.shields.io/github/issues/msr8/spotify?color=4CC9F0&labelColor=302D41&style=for-the-badge">
+
+![1-img](screenshots/1.png)
+
+![2-img](screenshots/2.png)
+
+![3-img](screenshots/3.png)
+
+![4-img](screenshots/4.png)
+
+</center>
+
+
+
+This project consists of two parts:
+
+1) **Scraper:** A scraper whose working hads 4 phases/parts:
+    1) Scrapes all the followers of the last scraped followers of a given user, and stores it in the `users` collection *(unoffical reverse-engineered API)*
+    2) Scrapes all the playlists of all the users, and stores it in the `playlists` collection *(unoffical reverse-engineered API)*
+    3) Scrapes the IDs of all the tracks of all the playlists, and stores it in `DATA/playlists_whose_tracks_have_been_scraped.txt` *(unoffical reverse-engineered API)*
+    4) Scrapes the audio features of all the tracks, and stores it in the `tracks` collection *(official API)*
+2) **Webserver:** A webserver hosting a webpage that shows recommendations based on the song whose link/ID is provided by the user. The recommendations are based on the audio features of the song, and are calculated using a modified optimised K-Nearest Neighbours algorithm
+
+
+
+<br><hr><br>
+
+
+
 # Index
 1) [Introduction](#1-introduction)
 2) [Running the webserver](#2-running-the-webserver)
@@ -13,14 +49,6 @@
 
 
 # 1) Introduction
-This project consists of two parts:
-
-1) **Scraper:** A scraper whose working hads 4 phases/parts:
-    1) Scrapes all the followers of the last scraped followers of a given user, and stores it in the `users` collection *(unoffical reverse-engineered API)*
-    2) Scrapes all the playlists of all the users, and stores it in the `playlists` collection *(unoffical reverse-engineered API)*
-    3) Scrapes the IDs of all the tracks of all the playlists, and stores it in `DATA/playlists_whose_tracks_have_been_scraped.txt` *(unoffical reverse-engineered API)*
-    4) Scrapes the audio features of all the tracks, and stores it in the `tracks` collection *(official API)*
-2) **Webserver:** A webserver hosting a webpage that shows recommendations based on the song whose link/ID is provided by the user. The recommendations are based on the audio features of the song, and are calculated using a modified optimised K-Nearest Neighbours algorithm
 
 <br>
 
@@ -68,7 +96,7 @@ docker pull maybemsr8/spotify
 docker run -it -p 8000:8000 --name spotify-cont maybemsr8/spotify
 ```
 
-Now you can access the webserver at `http://127.0.0.1:8000`. If you want to run the webserver again, you can use the following command:
+Give it a minute to initialise everything and then you can access the webserver at `http://127.0.0.1:8000`. If you want to run the webserver again, you can use the following command:
 ```bash
 docker start -i spotify-cont
 ```
@@ -78,19 +106,34 @@ docker start -i spotify-cont
 ### 2.2) Running via source
 **Pre-requisites:** Latest version of [python](https://www.python.org/downloads/) should be installed. [MongoDB]() should be installed and running on port 27018. If you want to use MongoDB on another port, modify the `PORT` variable in [`webserver/backend/views.py`](webserver/backend/views.py) to the port you want to use
 
-1) Import the data into MongoDB
-```bash
-#
-```
-
-2) Clone the repository
+1) Clone the repository and cd into it
 ```bash
 git clone https://github.com/msr8/spotify
+cd spotify
 ```
 
-2) Install the requirements
+2) Import the data into MongoDB
 ```bash
-#
+mongoimport --db spotify --collection tracks --type csv --file DATA/tracks.csv --headerline
+```
+
+3) Cd into the webserver and install the requirements
+```bash
+cd webserver
+python -m pip install -r requirements.txt
+```
+
+4) Run the webserver
+```bash
+python manage.py collectstatic --noinput
+python manage.py runserver 0.0.0.0:8000
+```
+
+Give it a minute to initialise everything and then you can access the webserver at `http://127.0.0.1:8000`. To run the webserver again, you can use the following commands:
+```bash
+# cd into the directory containing the code
+cd spotify/webserver
+python manage.py runserver 0.0.0.0:8000
 ```
 
 
@@ -106,7 +149,7 @@ Total records: 7,458,293
 
 ### Columns:
 
-(For more information, visit [this](https://developer.spotify.com/documentation/web-api/reference/get-audio-features))
+(For more information, see [Spotify's official documentation](https://developer.spotify.com/documentation/web-api/reference/get-audio-features))
 
 | Column Name      | Datatype | Description |
 |------------------|----------|-------------|
@@ -126,4 +169,12 @@ Total records: 7,458,293
 | valence          | float    |  A measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry) |
 
 
-<!-- https://www.kaggle.com/datasets/markmikaelson/7mil-spotify-audio-features/download?datasetVersionNumber=1 -->
+<!--
+
+https://www.kaggle.com/datasets/markmikaelson/7mil-spotify-audio-features/download?datasetVersionNumber=1 
+
+docker build --tag spotify-image --file webserver/Dockerfile .
+docker image tag spotify-image maybemsr8/spotify
+docker image push maybemsr8/spotify
+
+-->
