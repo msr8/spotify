@@ -27,7 +27,7 @@ This project consists of two parts:
     2) Scrapes all the playlists of all the users, and stores it in the `playlists` collection *(unoffical reverse-engineered API)*
     3) Scrapes the IDs of all the tracks of all the playlists, and stores it in `DATA/playlists_whose_tracks_have_been_scraped.txt` *(unoffical reverse-engineered API)*
     4) Scrapes the audio features of all the tracks, and stores it in the `tracks` collection *(official API)*
-2) **Webserver:** A webserver hosting a webpage that shows recommendations based on the song whose link/ID is provided by the user. The recommendations are based on the audio features of the song, and are calculated using a modified optimised K-Nearest Neighbours algorithm
+2) **Webserver:** A webserver hosting a webpage that shows recommendations based on the song whose link/ID is provided by the user. The recommendations are based on the audio features of the song, and are calculated using a custom optimised K-Nearest Neighbours algorithm
 
 
 

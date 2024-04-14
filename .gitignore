@@ -4,6 +4,7 @@
 users.csv
 playlists.csv
 playlists_whose_tracks_have_been_scraped.txt
+deployment-static-files/
 
 
 
