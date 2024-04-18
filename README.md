@@ -1,5 +1,3 @@
-
-
 <div align="center">
 
 <!-- https://coolors.co/gradient-palette/f72585-066da5?number=5 -->
@@ -50,19 +48,25 @@ This project consists of two parts:
 
 
 # 1) Introduction
+Developed a spotify scraper and a corresponding website enabling users to receive personalized recommendations based on Spotify track links or IDs
 
 <br>
 
 Some features of the scraper:
-- Implemented extensive error handling as to ensure that the scraper doesn't stop overnight due to any error
-- Wrapped all the scraping functions in a class, so that all the scraping operations (via official or unofficial API) can be done via a single object
-- Did the file/data operations in batches as to ensure that the I/O operations don't slow down the scraping process
+- Leveraged the Spotify API to scrape the audio features of over 7 million songs
+- Implemented robust error handling within the scraper as to prevent interruptions due to errors during operation, thereby ensuring continuous operation over extended durations without interruptions
+- Demonstrated adeptness in utilizing both, official and unofficial APIs for data acquisition
+- Organized scraping functionalities within a unified `Client` class, streamlining operations via a single object
+- Employed batch processing for file and data operations within the scraper, optimizing performance by mitigating I/O bottlenecks
 
 <br>
 
 Some features of the webserver:
-- Implemented error handling as to ensure that if something does not work, the user gets to know exactly why
-- Minimilistic yet responsive frontend, no clutter or bloat
+- Utilized a custom optimized K-Nearest Neighbors algorithm for recommendation generation
+- Implemented MongoDB as the database backend for efficient data storage and flexible querying capabilities
+- Containerized the web server using Docker for seamless deployment and execution across diverse environments
+- Implemented extensive and thorough error handling
+- Designed a minimalist yet responsive frontend interface, prioritizing usability and simplicity without unnecessary clutter
 
 <br>
 
